@@ -20,7 +20,6 @@ public class ImageController
 {
 	@Autowired
 	private ImageService imageService;
-
 	private Logger logger = LogManager.getLogger(ImageController.class);
 
 	/**
@@ -41,6 +40,7 @@ public class ImageController
 	/**
 	 * Retrieve Images by search term
 	 */
+	//TODO: explain the endpoint purpouse and the input parameters
 	//TODO: we should validate if the input is correct
 	@GetMapping(path="/search/{searchTerm}")
 	public ResponseEntity<List<ImageDescription>> search(@PathVariable(value = "searchTerm") String searchTerm) 
@@ -55,15 +55,4 @@ public class ImageController
 		}
 		return new ResponseEntity<List<ImageDescription>>(retrieveImageByCriteria, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
-	/**
-	 * Retrieve Images by search term
-	 */
-	//TODO: we should validate if the input is correct
-	@GetMapping(path="/initialize")
-	public void initialize()  
-	{
-		imageService.initialize();
-	}
-
 }

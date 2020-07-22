@@ -24,7 +24,7 @@ public class MongoConfig{
 	
 	@SuppressWarnings("deprecation")
 	@Bean(name = {"imagesTemplate"})
-	public MongoTemplate itinerariesTemplate() throws Exception {
+	public MongoTemplate imagesTemplate() throws Exception {
         MongoClient mongoClient = new MongoClient(host, port);
 		return new MongoTemplate(new SimpleMongoDbFactory(mongoClient,
         		database));

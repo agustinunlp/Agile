@@ -9,7 +9,10 @@ import com.agile.demo.domain.ImageList;
 public interface ImageService {
 	
 	void initialize();
+	
 	ImageList retriveImageFeedPage(int page);	
+	
 	ImageDescription retrieveImage(String imageId);
+	
 	List<ImageDescription> retrieveImageByCriteria(ImageSearchCriteria imageCriteria);
 }
